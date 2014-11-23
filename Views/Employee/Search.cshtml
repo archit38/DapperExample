@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DapperExample.Dapper.Employee>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search Results</title>
+</head>
+    <body>
+        @foreach (var item in Model)
+        {
+            <fieldset>
+                <legend>Employee</legend>
+    
+                <div class="display-label">
+                    @Html.DisplayNameFor(modelItem => modelItem.EmpID)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(modelItem => item.EmpID)
+                </div>
+    
+                <div class="display-label">
+                    @Html.DisplayNameFor(modelItem => modelItem.EmpName)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(modelItem => item.EmpName)
+                </div>
+    
+                <div class="display-label">
+                    @Html.DisplayNameFor(modelItem => modelItem.EmpScore)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(modelItem => item.EmpScore)
+                </div>
+            </fieldset>
+        }
+        <p>
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </body>
+</html>

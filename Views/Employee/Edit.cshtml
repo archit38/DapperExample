@@ -1,0 +1,59 @@
+﻿@model DapperExample.Dapper.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>Employee</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EmpID)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EmpID)
+                @Html.ValidationMessageFor(model => model.EmpID)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EmpName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EmpName)
+                @Html.ValidationMessageFor(model => model.EmpName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EmpScore)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EmpScore)
+                @Html.ValidationMessageFor(model => model.EmpScore)
+            </div>
+    
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

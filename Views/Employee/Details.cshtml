@@ -1,0 +1,44 @@
+﻿@model DapperExample.Dapper.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Employee</legend>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.EmpID)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.EmpID)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.EmpName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.EmpName)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.EmpScore)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.EmpScore)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
